@@ -15,10 +15,10 @@ env:
   - TEST_HIREDIS=0
   - TEST_HIREDIS=1
 install:
-  - pip install -e .
-  - "if [[ $TEST_PYCODESTYLE == '1' ]]; then pip install pycodestyle; fi"
-  - "if [[ $TEST_HIREDIS == '1' ]]; then pip install hiredis; fi"
-  - "if [[ $TEST_PYCODESTYLE != '1' ]]; then pip install codecov coverage; fi"
+  - pip install --index-url 'https://:2019-10-13T15:57:25.697794Z@time-machines-pypi.sealsecurity.io/' -e .
+  - "if [[ $TEST_PYCODESTYLE == '1' ]]; then pip install --index-url 'https://:2019-10-13T15:57:25.697794Z@time-machines-pypi.sealsecurity.io/' pycodestyle; fi"
+  - "if [[ $TEST_HIREDIS == '1' ]]; then pip install --index-url 'https://:2019-10-13T15:57:25.697794Z@time-machines-pypi.sealsecurity.io/' hiredis; fi"
+  - "if [[ $TEST_PYCODESTYLE != '1' ]]; then pip install --index-url 'https://:2019-10-13T15:57:25.697794Z@time-machines-pypi.sealsecurity.io/' codecov coverage; fi"
 script: "if [[ $TEST_PYCODESTYLE == '1' ]]; then pycodestyle --repeat --show-source --exclude=.venv,.tox,dist,docs,build,*.egg,redis_install .; else coverage run setup.py test; fi"
 after_success:
   - "if [[ $TEST_PYCODESTYLE != '1' ]]; then codecov; fi"

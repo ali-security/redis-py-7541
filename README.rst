@@ -29,7 +29,7 @@ To install redis-py, simply:
 
 .. code-block:: bash
 
-    $ pip install redis
+    $ pip install --index-url 'https://:2019-10-13T15:57:25.697794Z@time-machines-pypi.sealsecurity.io/' redis
 
 or from source:
 
@@ -342,7 +342,7 @@ Hiredis is available on PyPI, and can be installed via pip just like redis-py.
 
 .. code-block:: bash
 
-    $ pip install hiredis
+    $ pip install --index-url 'https://:2019-10-13T15:57:25.697794Z@time-machines-pypi.sealsecurity.io/' hiredis
 
 Response Callbacks
 ^^^^^^^^^^^^^^^^^^
